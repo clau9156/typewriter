@@ -67,8 +67,9 @@ function loop() {
     if (n <= text.length) {
         console.log("wait before calling loop() again");
         setTimeout(loop, 500); 
-    }else{
+    }
+    // else{
         // end!
         // end(); 
-    }
+    // }
 }
