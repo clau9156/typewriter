@@ -12,10 +12,10 @@ let increment = 0;
 function init() {
     console.log("init");
     // get the text from somewhere
-    document.querySelector(".textwritten").textContent;
+    document.querySelector(".typewritten").textContent;
 
     // clear the HTML area
-    document.querySelector(".textwritten").textContent = "";
+    document.querySelector(".typewritten").textContent = "";
 
     // start loop
     loop();
@@ -26,7 +26,7 @@ funcion loop() {
     // show the N'th letter:
     // - set textContent to subsring of 0 to N
     if (increment < text.length) {
-        document.querySelector(".textwritten").textContent += text.charAt(increment);
+        document.querySelector(".typewritten").textContent += text.charAt(increment);
         // increment N
         increment++;
         // wait before calling loop () again
