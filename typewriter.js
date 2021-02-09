@@ -1,12 +1,14 @@
-"use strict";
+// "use strict";
 
 // init();
 window.addEventListener("load", init);
 
 // text in HTML
-let text = document.querySelector(".typewritten");
+// let text = document.querySelector(".typewritten");
+const text = document.querySelector(".typewritten").textContent;
 // increment N
-let increment = 0;
+// let increment = 0;
+let n = 1
 
 
 function init() {
@@ -21,20 +23,24 @@ function init() {
     loop();
 }
 
-funcion loop() {
-    console.log("loop");
-    // show the N'th letter:
-    // - set textContent to subsring of 0 to N
-    if (increment < text.length) {
-        document.querySelector(".typewritten").textContent += text.charAt(increment);
-        // increment N
-        increment++;
-        // wait before calling loop () again
-        setTimeout(loop, 500); 
-    } 
-    // else{
-    // end! 
-    // }
+// function loop() {
+//     console.log("loop");
+//     // show the N'th letter:
+//     // - set textContent to subsring of 0 to N
+//     if (increment < text.length) {
+//         document.querySelector(".typewritten").textContent += text.charAt(increment);
+//         // increment N
+//         increment++;
+//         // wait before calling loop () again
+//         setTimeout(loop, 500); 
+//     }else{
+//         // end!
+//         end(); 
+//     }
+// }
+
+function end() {
+    console.log("end!")
 }
 
 
@@ -48,3 +54,21 @@ funcion loop() {
 
 // .length
 // reminds me of password instead of * its just saying for every letter it adds another.
+
+// another version trying substring
+function loop() {
+    console.log("loop");
+    // show the N'th letter:
+    // - set textContent to subsring of 0 to N
+    document.querySelector(".typewritten").textContent = text.substring(0,n);
+    // increment N
+    n++;
+    // wait before calling loop() again
+    if (n <= text.length) {
+        console.log("wait before calling loop() again");
+        setTimeout(loop, 500); 
+    }else{
+        // end!
+        // end(); 
+    }
+}
